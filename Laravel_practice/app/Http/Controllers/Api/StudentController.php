@@ -114,22 +114,27 @@ class StudentController extends Controller
             ], 422);
         } else {
             $student = Student::find($id);
-            $student = Student::update([
-                'name' => $request->name,
-                'course' => $request->course,
-                'email' => $request->email,
-                'phone' => $request->phone,
-            ]);
+
+
+
             if ($student) {
+                $student = Student::update([
+                    'name' => $request->name,
+                    'course' => $request->course,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                ]);
+
+
                 return response()->json([
                     'status' => 200,
-                    'message' => "Student Created Successfully"
+                    'message' => "Student Updated Successfully"
                 ], 200);
             } else {
                 return response()->json([
-                    'status' => 500,
-                    'message' => "Someting went wrong"
-                ], 500);
+                    'status' => 404,
+                    'message' => "No such Student found"
+                ], 404);
 
             }
         }
