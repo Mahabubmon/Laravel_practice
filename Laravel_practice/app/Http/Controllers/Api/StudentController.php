@@ -113,12 +113,10 @@ class StudentController extends Controller
                 'errors' => $validator->messages()
             ], 422);
         } else {
+
             $student = Student::find($id);
-
-
-
             if ($student) {
-                $student = Student::update([
+                $student->update([
                     'name' => $request->name,
                     'course' => $request->course,
                     'email' => $request->email,
@@ -137,6 +135,26 @@ class StudentController extends Controller
                 ], 404);
 
             }
+        }
+    }
+
+    public function destroy($id)
+    {
+
+        $student = Student::find($id);
+        if ($student) {
+
+            $student->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => "Student Deleted Successfully"
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 404,
+                'message' => "No such Student found"
+            ], 404);
+
         }
     }
 
