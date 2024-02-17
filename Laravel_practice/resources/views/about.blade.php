@@ -8,8 +8,7 @@
 </head>
 
 <body>
-    <h1>Link For Various Page</h1>
-
+    <h1>This is about page</h1>
 </body>
 
 </html>
