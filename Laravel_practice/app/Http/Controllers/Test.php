@@ -16,6 +16,6 @@ class Test extends Controller
     }
     public function product()
     {
-        return view('product');
+        return view('pages.product.addproduct');
     }
 }
