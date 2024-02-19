@@ -11,7 +11,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{route('product')}}">
                 <i class="bx bx-box"></i>
                 <span class="links_name">Product</span>
             </a>

@@ -13,4 +13,9 @@ class Dashboard extends Controller
     {
         return view('backend.dashboard');
     }
+
+    function product()
+    {
+        return view('backend.addproduct');
+    }
 }
