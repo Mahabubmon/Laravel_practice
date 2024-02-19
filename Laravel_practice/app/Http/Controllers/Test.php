@@ -12,10 +12,6 @@ class Test extends Controller
     }
     public function about()
     {
-        return view('welcome');
-    }
-    public function product()
-    {
-        return view('pages.product.addproduct');
+        return view('about');
     }
 }
