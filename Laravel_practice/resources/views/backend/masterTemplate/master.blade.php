@@ -20,7 +20,7 @@
         <div class="home-content">
 
             <!-- over-view-box -->
-            @include('backend.includes.overView')
+            @yield('overView-content')
             <!-- over-view-box end -->
 
             <!-- main-conent -->
