@@ -12,5 +12,9 @@ class Product extends Controller
     {
         return view('backend.pages.product.add');
     }
+    public function manage()
+    {
+        return view('backend.pages.product.manage');
+    }
 
 }
