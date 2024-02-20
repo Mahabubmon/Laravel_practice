@@ -345,6 +345,47 @@ nav .profile-details i{
   font-weight: 400;
   color: #333;
 }
+
+/* drop-down */
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  /* Adjust width as needed */
+  background-color: #0A2558;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  /* Ensure dropdown is above other elements */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #081D45;
+}
+/* drop-down end */
+
+
+
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{
