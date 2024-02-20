@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Test;
 use App\Http\Controllers\Frontend\Frontend;
 use App\Http\Controllers\Backend\Dashboard;
+use App\Http\Controllers\Backend\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,10 @@ use App\Http\Controllers\Backend\Dashboard;
 */
 // for backend
 Route::get('/dashboard', [Dashboard::class, 'index'])->name('Dashboard');
-Route::get('/product', [Dashboard::class, 'product'])->name('product');
+
+
+// for product
+Route::get('/product', [Product::class, 'index'])->name('product');
 
 
 
