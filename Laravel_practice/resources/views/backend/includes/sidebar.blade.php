@@ -17,8 +17,8 @@
                 <i class='bx bx-chevron-right'></i>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="{{route('product')}}">Dropdown Item 1</a></li>
-                <li><a href="#">Dropdown Item 2</a></li>
+                <li><a href="{{route('product')}}">Add Pruduct</a></li>
+                <li><a href="#">Manage Product</a></li>
                 <!-- Add more dropdown items as needed -->
             </ul>
         </li>

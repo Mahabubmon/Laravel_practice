@@ -7,13 +7,20 @@
             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     };
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-<script>
-    $(document).ready(function () {
-        $(".dropdown > a").click(function (e) {
-            e.preventDefault(); // Prevent the default action of the anchor link
-            $(this).siblings(".dropdown-menu").stop().slideToggle(300);
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', () => {
+                dropdown.classList.toggle('active');
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                dropdownMenu.classList.toggle('active');
+            });
         });
     });
+
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>

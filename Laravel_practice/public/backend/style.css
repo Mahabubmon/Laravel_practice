@@ -347,40 +347,41 @@ nav .profile-details i{
 }
 
 /* drop-down */
-
+/* Basic styling for the dropdown menu */
 .dropdown-menu {
   display: none;
+  /* Initially hide the dropdown menu */
   position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 200px;
-  /* Adjust width as needed */
-  background-color: #0A2558;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Position the dropdown menu relative to its parent */
+  top: 100%;
+  /* Position the dropdown menu below its parent */
+  left: 0;
+  /* Align the dropdown menu with the left edge of its parent */
+  background-color: #fff;
+  /* Background color of the dropdown menu */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Box shadow for the dropdown menu */
   z-index: 1000;
-  /* Ensure dropdown is above other elements */
+  /* Ensure the dropdown menu appears above other content */
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-menu.active {
   display: block;
+  /* Show the dropdown menu when active class is present */
 }
 
 .dropdown-menu li {
-  list-style: none;
+  padding: 10px;
+  /* Add padding to dropdown menu items */
 }
 
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color 0.3s;
+.dropdown-menu li:hover {
+  background-color: #0d11e4;
+  /* Change background color on hover */
 }
 
-.dropdown-menu li a:hover {
-  background-color: #081D45;
-}
+/* Additional styling as needed */
+
 /* drop-down end */
 
 
