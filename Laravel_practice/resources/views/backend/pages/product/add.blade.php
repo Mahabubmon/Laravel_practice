@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card">
         <h1>Add product</h1>
-        <form>
+        <form action="" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Product Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter product name">
