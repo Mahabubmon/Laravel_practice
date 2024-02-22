@@ -1,8 +1,6 @@
-@extends('backend.mastertemplate.master')
+@foreach($products as $data)
 
 
+{{$data->name}}
 
-@section('main-content')
-<h2>Manage Product</h2>
-
-@endsection
+@endforeach

@@ -23,7 +23,7 @@
             </div>
             <div class="mb-3">
                 <label for="quantity" class="form-label">Quantity</label>
-                <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Enter quantity">
+                <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Enter quantity">
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>

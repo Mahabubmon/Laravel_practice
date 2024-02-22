@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Test;
 use App\Http\Controllers\Frontend\Frontend;
 use App\Http\Controllers\Backend\Dashboard;
 use App\Http\Controllers\Backend\Product;
@@ -23,6 +22,7 @@ Route::get('/dashboard', [Dashboard::class, 'index'])->name('Dashboard');
 // for product
 Route::get('/product', [Product::class, 'index'])->name('product');
 Route::post('/insertproduct', [Product::class, 'insert'])->name('insertproduct');
+Route::get('/showproduct', [Product::class, 'show'])->name('showproduct');
 
 
 

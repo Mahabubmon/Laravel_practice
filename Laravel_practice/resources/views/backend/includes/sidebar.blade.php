@@ -18,7 +18,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li><a href="{{route('product')}}">Add Pruduct</a></li>
-                <li><a href="#">Manage Product</a></li>
+                <li><a href="{{route('showproduct')}}">Manage Product</a></li>
                 <!-- Add more dropdown items as needed -->
             </ul>
         </li>
