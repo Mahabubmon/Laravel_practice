@@ -11,6 +11,7 @@
                 <th>Product Price</th>
                 <th>Product Quantity</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,10 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->quantity}}</td>
                 <td>{{$product->status}}</td>
+                <td>
+                    <button href="#" class="btn btn-info">Edit</button>
+                    <button href="#" class="btn btn-danger">Delete</button>
+                </td>
                 <!-- <td></td>
                 <td>System Architect</td>
                 <td>Edinburgh</td>

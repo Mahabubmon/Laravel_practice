@@ -17,7 +17,6 @@
             <div class="mb-3">
                 <label for="price" class="form-label">Product Price</label>
                 <div class="input-group">
-                    <span class="input-group-text">$</span>
                     <input type="text" class="form-control" name="price" id="price" placeholder="Enter product price">
                 </div>
             </div>
