@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\App\ModelProduct;
 
 class Product extends Controller
 {
@@ -12,9 +13,15 @@ class Product extends Controller
     {
         return view('backend.pages.product.add');
     }
-    public function manage()
+    public function insert(Request $request)
     {
-        return view('backend.pages.product.manage');
+        $product = new ModelProduct;
+        $product->name = $request->name;
+        $product->des = $request->des;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->status = $request->status;
+        // $product->save();
     }
 
 }

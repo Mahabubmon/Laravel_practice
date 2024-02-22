@@ -22,7 +22,7 @@ Route::get('/dashboard', [Dashboard::class, 'index'])->name('Dashboard');
 
 // for product
 Route::get('/product', [Product::class, 'index'])->name('product');
-Route::get('/manage', [Product::class, 'manage'])->name('manageproduct');
+Route::post('/insertproduct', [Product::class, 'insert'])->name('insertproduct');
 
 
 

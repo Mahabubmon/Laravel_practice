@@ -4,29 +4,30 @@
 <div class="container">
     <div class="card">
         <h1>Add product</h1>
-        <form action="" method="POST">
+        <form action="{{route('insertproduct')}}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Product Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter product name">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter product name">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Product Description</label>
-                <textarea class="form-control" id="description" placeholder="Enter product description"></textarea>
+                <textarea class="form-control" name="des" id="des" placeholder="Enter product description"></textarea>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Product Price</label>
                 <div class="input-group">
                     <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="price" placeholder="Enter product price">
+                    <input type="text" class="form-control" name="price" id="price" placeholder="Enter product price">
                 </div>
             </div>
             <div class="mb-3">
                 <label for="quantity" class="form-label">Quantity</label>
-                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity">
+                <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Enter quantity">
             </div>
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
-                <select name="status" id="status" class="form-control">
+                <select name="status" name="status" id="status" class="form-control">
                     <option value="">-----Select Status-----</option>
                     <option value="1">Active</option>
                     <option value="2">Inactive</option>
