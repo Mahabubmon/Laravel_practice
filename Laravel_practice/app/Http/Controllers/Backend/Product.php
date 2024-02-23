@@ -32,5 +32,14 @@ class Product extends Controller
         return view('backend.pages.product.manage', compact('products'));
 
     }
+    public function delete($id)
+    {
+        $product = ModelProduct::finde($id);
+        $product->delete();
+        return back();
+    }
+
+
+
 
 }

@@ -25,14 +25,9 @@
                 <td>{{$product->status}}</td>
                 <td>
                     <button href="#" class="btn btn-info">Edit</button>
-                    <button href="#" class="btn btn-danger">Delete</button>
+                    <button href="{{route('deleteproduct' , $product->id)}}" class="btn btn-danger">Delete</button>
                 </td>
-                <!-- <td></td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td> -->
+
             </tr>
             @endforeach
 
