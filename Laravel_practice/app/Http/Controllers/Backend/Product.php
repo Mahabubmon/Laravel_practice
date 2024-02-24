@@ -23,7 +23,7 @@ class Product extends Controller
         $product->quantity = $request->quantity;
         $product->status = $request->status;
         $product->save();
-        return back();
+        return redirect()->route('showproduct');
     }
 
     public function show()
@@ -34,7 +34,6 @@ class Product extends Controller
     }
     public function delete($id)
     {
-        alert("this is ok0");
         $product = ModelProduct::find($id);
         $product->delete();
         return back();
