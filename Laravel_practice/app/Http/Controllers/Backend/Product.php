@@ -34,7 +34,8 @@ class Product extends Controller
     }
     public function delete($id)
     {
-        $product = ModelProduct::finde($id);
+        alert("this is ok0");
+        $product = ModelProduct::find($id);
         $product->delete();
         return back();
     }
