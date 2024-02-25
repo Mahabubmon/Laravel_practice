@@ -23,7 +23,11 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->quantity}}</td>
                 <td>
-
+                    @if($product->status == 1)
+                    <a href="{{route('activeproduct', $product->id)}}" class="btn btn-info">Active</a>
+                    @else
+                    <a href="{{route('inactiveproduct', $product->id)}}" class="btn btn-danger">Inactive</a>
+                    @endif
                 </td>
                 <td>
                     <a href="#" class="btn btn-info">Edit</a>

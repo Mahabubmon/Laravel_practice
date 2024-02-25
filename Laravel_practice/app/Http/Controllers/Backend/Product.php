@@ -38,6 +38,20 @@ class Product extends Controller
         $product->delete();
         return back();
     }
+    public function active($id)
+    {
+        $product = ModelProduct::find($id);
+        $product->status = '2';
+        $product->update();
+        return back();
+    }
+    public function inactive($id)
+    {
+        $product = ModelProduct::find($id);
+        $product->status = '1';
+        $product->update();
+        return back();
+    }
 
 
 

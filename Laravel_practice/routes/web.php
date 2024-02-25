@@ -24,6 +24,8 @@ Route::get('/product', [Product::class, 'index'])->name('product');
 Route::post('/insertproduct', [Product::class, 'insert'])->name('insertproduct');
 Route::get('/showproduct', [Product::class, 'show'])->name('showproduct');
 Route::get('/deleteproduct/{id}', [Product::class, 'delete'])->name('deleteproduct');
+Route::get('/activeproduct/{id}', [Product::class, 'active'])->name('activeproduct');
+Route::get('/inactiveproduct/{id}', [Product::class, 'inactive'])->name('inactiveproduct');
 
 
 
