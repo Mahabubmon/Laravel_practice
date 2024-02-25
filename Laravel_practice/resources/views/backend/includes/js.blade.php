@@ -27,6 +27,18 @@
 
     new DataTable('#example');
 
+
+
+    $(document).ready(function () {
+        // Add event listener to all delete buttons
+        $('.delete-btn').click(function () {
+            // Get the modal ID by concatenating 'delete' with product ID
+            var modalId = $(this).data('target');
+            // Open the corresponding modal
+            $(modalId).modal('show');
+        });
+    });
+
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" defer></script>
