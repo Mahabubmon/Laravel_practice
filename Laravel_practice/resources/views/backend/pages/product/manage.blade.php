@@ -23,16 +23,11 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->quantity}}</td>
                 <td>
-                    @php
-                    @if($product->status==1)
-                    <a href="" class="btn btn-info btn-sm">Active</a>
 
-                    @endif
-                    @endphp
                 </td>
                 <td>
-                    <button href="#" class="btn btn-info">Edit</button>
-                    <button href="{{route('deleteproduct' , $product->id)}}" class="btn btn-danger">Delete</button>
+                    <a href="#" class="btn btn-info">Edit</a>
+                    <a href="{{route('deleteproduct' , $product->id)}}" class="btn btn-danger">Delete</a>
                 </td>
 
             </tr>
