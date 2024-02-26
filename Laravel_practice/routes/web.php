@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\Frontend;
 use App\Http\Controllers\Backend\Dashboard;
 use App\Http\Controllers\Backend\Product;
+use App\Http\Controllers\Backend\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,10 @@ Route::get('/inactiveproduct/{id}', [Product::class, 'inactive'])->name('inactiv
 Route::get('/editproduct/{id}', [Product::class, 'edit'])->name('editproduct');
 Route::post('/updateproduct/{id}', [Product::class, 'update'])->name('updateproduct');
 
+
+
+// for category
+Route::get('/addcategory', [CategoryController::class, 'index'])->name('addcategory');
 
 
 
