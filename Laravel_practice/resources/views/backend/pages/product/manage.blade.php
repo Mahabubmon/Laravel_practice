@@ -30,7 +30,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href="#" class="btn btn-info">Edit</a>
+                    <a href="{{route('editproduct', $product->id)}}" class="btn btn-info">Edit</a>
                     <button data-bs-toggle="modal" data-bs-target="#delete{{$product->id}}" class="btn btn-danger">
                         Delete</button>
 
