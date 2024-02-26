@@ -34,6 +34,8 @@ Route::post('/updateproduct/{id}', [Product::class, 'update'])->name('updateprod
 
 // for category
 Route::get('/addcategory', [CategoryController::class, 'index'])->name('addcategory');
+Route::get('/showcategory', [CategoryController::class, 'show']);
+Route::post('/insertcategory', [CategoryController::class, 'store'])->name('insertcategory');
 
 
 

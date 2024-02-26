@@ -20,14 +20,14 @@
                 <td>{{$category->name}}</td>
                 <td>{{$category->des}}</td>
                 <td>
-                    @if($category->status == 1)
-                    <a href="{{route('activecategory', $category->id)}}" class="btn btn-info">Active</a>
-                    @else
-                    <a href="{{route('inactivecategory', $category->id)}}" class="btn btn-danger">Inactive</a>
-                    @endif
+                    <!-- @if($category->status == 1) -->
+                    <a href="" class="btn btn-info">Active</a>
+                    <!-- @else -->
+                    <a href="" class="btn btn-danger">Inactive</a>
+                    <!-- @endif -->
                 </td>
                 <td>
-                    <a href="{{route('editcategory', $category->id)}}" class="btn btn-info">Edit</a>
+                    <a href="" class="btn btn-info">Edit</a>
                     <button data-bs-toggle="modal" data-bs-target="#delete{{$category->id}}" class="btn btn-danger">
                         Delete</button>
 
@@ -52,22 +52,22 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="name">Category Name</label>
-                    <input type="text" class="name form-control" placeholder="Name" id="name">
+                    <input type="text" class="category_name form-control" placeholder="Name" id="name">
                 </div>
                 <div class="form-group">
                     <label for="des">Category Description</label>
-                    <input type="text" class="des form-control" placeholder="Description" id="des">
+                    <input type="text" class="category_des form-control" placeholder="Description" id="des">
                 </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">Status</label>
-                    <select name="status" id="status" class="form-control status">
+                    <select name="status" id="status" class="form-control category_status">
                         <option value="">-----Select Status-----</option>
                         <option value="1">Active</option>
                         <option value="2">Inactive</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <button class="add-category form-control">Add Category</button>
+                    <button class="add-category form-control btn btn-primary" name="add-category">Add Category</button>
                 </div>
             </div>
             <div class="modal-footer">

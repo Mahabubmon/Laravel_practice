@@ -14,8 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('backend.pages.category.add', compact('categories'));
+        return view('backend.pages.category.add');
     }
 
     /**
@@ -31,15 +30,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cat = new Category;
+        $cat->name = $request->name;
+        $cat->des = $request->des;
+        $cat->status = $request->status;
+
+        $cat->save();
+        return response()->json([
+            'msg' => 'Data Submitted Successfully'
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $cats = Category::all();
+
     }
 
     /**

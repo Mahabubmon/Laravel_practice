@@ -25,23 +25,9 @@
 
 
 
-    new DataTable('#example');
-
-
-
-    $(document).ready(function () {
-        // Add event listener to all delete buttons
-        $('.delete-btn').click(function () {
-            // Get the modal ID by concatenating 'delete' with product ID
-            var modalId = $(this).data('target');
-            // Open the corresponding modal
-            $(modalId).modal('show');
-        });
-    });
 
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" defer></script>
 <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js" defer></script>
@@ -52,3 +38,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
+<!-- ajax file -->
+<script src="{{asset('backend')}}/js/ajaxforcategory.js" defer></script>
