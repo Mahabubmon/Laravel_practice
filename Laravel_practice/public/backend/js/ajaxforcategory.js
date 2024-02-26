@@ -21,6 +21,8 @@ $(document).ready(function () {
             success: function (res) {
                 alert(res.msg);
                 $("#add").modal("hide");
+                $(".modal-backdrop").remove();
+                show();
             },
         });
     });
@@ -32,7 +34,25 @@ $(document).ready(function () {
             type: "GET",
             dataType: "json",
             success: function (res) {
-                console.log(res);
+                var allData = "";
+                $.each(res.allData, function (key, val) {
+                    allData +=
+                        "<tr>\
+                    <td>" +
+                        key +
+                        "</td>\
+                    <td>" +
+                        val.name +
+                        "</td>\
+                    <td>" +
+                        val.des +
+                        "</td>\
+                    <td>" +
+                        val.status +
+                        "</td>\
+                    </tr > ";
+                });
+                $(".allData").html(allData);
             },
         });
     }
