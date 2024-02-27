@@ -48,12 +48,10 @@
                             <option value="2">Inactive</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <button class="add-category form-control btn btn-primary" name="add-category">Add
-                            Category</button>
-                    </div>
                 </div>
                 <div class="modal-footer">
+                    <a class="add-category btn btn-primary" name="add-category">Add
+                        Category</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
