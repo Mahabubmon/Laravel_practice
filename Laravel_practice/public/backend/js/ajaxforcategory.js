@@ -67,7 +67,7 @@ $(document).ready(function () {
                         val.status +
                         "</td>\
                     <td>\
-                    <button class='btn-cat-edit btn btn-info btn-sm' > Edit</button>\
+                    <button class='btn-cat-edit btn btn-info btn-sm'> Edit</button>\
                     <button class='btn-cat-delete btn btn-danger btn-sm' > Delete</button>\
                     </td>\
                     </tr>";
