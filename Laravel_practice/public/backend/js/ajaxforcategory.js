@@ -90,8 +90,8 @@ $(document).ready(function () {
         $("#m-cat-delete-btn").val(id);
     });
 
-    $(document).on("click", "m-cat-delete-btn", function () {
-        // var id = $(this).val();
+    $(document).on("click", "#m-cat-delete-btn", function () {
+        var id = $(this).val();
         alert(id);
     });
 });
