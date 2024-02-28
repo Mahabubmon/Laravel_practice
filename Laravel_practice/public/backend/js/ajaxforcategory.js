@@ -67,8 +67,12 @@ $(document).ready(function () {
                         val.status +
                         "</td>\
                     <td>\
-                    <button class='btn-cat-edit btn btn-info btn-sm'> Edit</button>\
-                    <button class='btn-cat-delete btn btn-danger btn-sm' > Delete</button>\
+                    <button value=" +
+                        val.id +
+                        " class='btn-cat-edit btn btn-info btn-sm'> Edit</button>\
+                    <button value=" +
+                        val.id +
+                        "  class='btn-cat-delete btn btn-danger btn-sm' > Delete</button>\
                     </td>\
                     </tr>";
                 });
@@ -82,5 +86,12 @@ $(document).ready(function () {
 
     $(document).on("click", ".btn-cat-delete", function () {
         $("#delete").modal("show");
+        var id = $(this).val();
+        $("#m-cat-delete-btn").val(id);
+    });
+
+    $(document).on("click", "m-cat-delete-btn", function () {
+        // var id = $(this).val();
+        alert(id);
     });
 });

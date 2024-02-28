@@ -71,9 +71,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button bu class=" btn btn-primary" name="add-category">Yes
-                        </button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button id="m-cat-delete-btn"  class=" btn btn-primary" name="add-category">Yes</button>
                 </div>
             </div>
         </div>
