@@ -79,4 +79,8 @@ $(document).ready(function () {
 
     // Call the show function initially to populate the table
     show();
+
+    $(document).on("click", ".btn-cat-delete", function () {
+        $("#delete").modal("show");
+    });
 });

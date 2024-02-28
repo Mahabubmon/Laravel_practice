@@ -59,7 +59,7 @@
     </div>
     <!-- End  category Modal -->
     <!-- For Delete category Modal -->
-    <div class="modal fade" id="add" tabindex="-1" role="dialog">
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -67,12 +67,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h1>Are you sure want to delete the field?</h1>
+                    Are you sure want to delete the field?
 
                 </div>
                 <div class="modal-footer">
-                    <a class="add-category btn btn-primary" name="add-category">Yes
-                        Category</a>
+                    <button bu class=" btn btn-primary" name="add-category">Yes
+                        </button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                 </div>
             </div>
