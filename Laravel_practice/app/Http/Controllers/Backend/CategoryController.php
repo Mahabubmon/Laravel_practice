@@ -83,4 +83,25 @@ class CategoryController extends Controller
             "msg" => "Data successfully Deleted"
         ]);
     }
+
+    public function active($id)
+    {
+        $product = Category::find($id);
+        $product->status = '2';
+        $product->update();
+        return response()->json([
+            "msg" => "Status successfully Changed "
+        ]);
+
+    }
+    public function inactive($id)
+    {
+        $product = Category::find($id);
+        $product->status = '1';
+        $product->update();
+        return response()->json([
+            "msg" => "Status successfully Changed "
+        ]);
+
+    }
 }

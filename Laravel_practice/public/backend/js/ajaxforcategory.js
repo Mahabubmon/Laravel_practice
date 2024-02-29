@@ -50,12 +50,25 @@ $(document).ready(function () {
             type: "GET",
             dataType: "json",
             success: function (res) {
+                var sl = 1;
                 var allData = "";
                 $.each(res.allData, function (key, val) {
+                    var status = "";
+                    if (val.status == 1) {
+                        status =
+                            '<button value=" ' +
+                            val.id +
+                            ' " class="btn-cat-active btn btn-info btn-sm">Active</button>';
+                    } else {
+                        status =
+                            '<button value=" ' +
+                            val.id +
+                            ' " class="btn-cat-inactive btn btn-warning btn-sm">Inactive</button>';
+                    }
                     allData +=
                         "<tr>\
                     <td>" +
-                        (key + 1) +
+                        sl++ +
                         "</td>\
                     <td>" +
                         val.name +
@@ -64,7 +77,7 @@ $(document).ready(function () {
                         val.des +
                         "</td>\
                     <td>" +
-                        val.status +
+                        status +
                         "</td>\
                     <td>\
                     <button value=" +
@@ -99,6 +112,32 @@ $(document).ready(function () {
                 alert(res.msg);
                 $("#delete").modal("hide");
 
+                show();
+            },
+        });
+    });
+
+    $(document).on("click", ".btn-cat-active", function () {
+        var id = $(this).val();
+
+        $.ajax({
+            url: "/activecategory/" + id,
+            type: "get",
+            success: function (res) {
+                alert(res.msg);
+
+                show();
+            },
+        });
+    });
+    $(document).on("click", ".btn-cat-inactive", function () {
+        var id = $(this).val();
+
+        $.ajax({
+            url: "/inactivecategory/" + id,
+            type: "get",
+            success: function (res) {
+                alert(res.msg);
                 show();
             },
         });

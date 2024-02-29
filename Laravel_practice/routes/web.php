@@ -37,6 +37,8 @@ Route::get('/addcategory', [CategoryController::class, 'index'])->name('addcateg
 Route::get('/showcategory', [CategoryController::class, 'show']);
 Route::post('/insertcategory', [CategoryController::class, 'store'])->name('insertcategory');
 Route::get('/deletecategory/{id}', [CategoryController::class, 'destroy']);
+Route::get('/activecategory/{id}', [CategoryController::class, 'active']);
+Route::get('/inactivecategory/{id}', [CategoryController::class, 'inactive']);
 
 
 
