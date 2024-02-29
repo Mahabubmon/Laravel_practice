@@ -92,6 +92,15 @@ $(document).ready(function () {
 
     $(document).on("click", "#m-cat-delete-btn", function () {
         var id = $(this).val();
-        alert(id);
+        $.ajax({
+            url: "/deletecategory/" + id,
+            type: "get",
+            success: function (res) {
+                alert(res.msg);
+                $("#delete").modal("hide");
+
+                show();
+            },
+        });
     });
 });

@@ -76,5 +76,11 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         //
+        $product = Category::find($id);
+        $product->delete();
+
+        return response()->json([
+            "msg" => "Data successfully Deleted"
+        ]);
     }
 }
