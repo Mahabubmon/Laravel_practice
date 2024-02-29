@@ -52,6 +52,8 @@
                 <div class="modal-footer">
                     <a class="add-category btn btn-primary" name="add-category">Add
                         Category</a>
+                    <a class="update-category btn btn-primary" name="update-category" style="display:none">Update
+                        Category</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>

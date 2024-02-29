@@ -142,4 +142,54 @@ $(document).ready(function () {
             },
         });
     });
+    $(document).on("click", ".btn-cat-edit", function () {
+        var id = $(this).val();
+        $(".update-category").show();
+        $(".add-category").hide();
+        $("#add").modal("show");
+
+        $.ajax({
+            url: "/editcategory/" + id,
+            type: "get",
+            success: function (res) {
+                $(".category_name").val(res.allData.name);
+                $(".category_des").val(res.allData.des);
+                $(".category_status").val(res.allData.status);
+                $(".update-category").val(res.allData.id);
+                show();
+            },
+        });
+    });
+
+    $(document).on("click", ".update-category", function () {
+        var id = $(this).val();
+        var name = $(".category_name").val();
+        var des = $(".category_des").val();
+        var status = $(".category_status").val();
+
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+        });
+
+        $.ajax({
+            url: "/updatecategory/" + id,
+            type: "POST",
+            data: {
+                name: name,
+                des: des,
+                status: status,
+            },
+            success: function (res) {
+                alert(res.msg);
+                $("#add").modal("hide");
+                // Delay the removal of modal backdrop to ensure modal is fully hidden
+                setTimeout(function () {
+                    $(".modal-backdrop").remove();
+                }, 500); // Adjust the delay as needed
+                show(); // Reload the data after adding a new category
+            },
+        });
+    });
 });

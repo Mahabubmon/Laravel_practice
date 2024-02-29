@@ -60,6 +60,10 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         //
+        $cat = Category::find($id);
+        return response()->json([
+            "allData" => $cat
+        ]);
     }
 
     /**
@@ -68,6 +72,15 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $cat = Category::find($id);
+        $cat->name = $request->name;
+        $cat->des = $request->des;
+        $cat->status = $request->status;
+
+        $cat->update();
+        return response()->json([
+            'msg' => 'Data Updated Successfully'
+        ]);
     }
 
     /**
