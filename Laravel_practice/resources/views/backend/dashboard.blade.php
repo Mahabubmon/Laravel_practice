@@ -1,7 +1,7 @@
 @extends('backend.mastertemplate.master')
 
 @section('overView-content')
-@include('backend.includes.overView')
+    @include('backend.includes.overView')
 @endsection
 
 @section('main-content')
@@ -9,10 +9,6 @@
     <!-- Your sales boxes content here -->
     <canvas id="barChart" width="400" height="400"></canvas>
 </div>
-
-<!-- Add a canvas element for the bar chart -->
-
-
 @endsection
 
 @push('scripts')
@@ -45,12 +41,20 @@
 
     // Get the canvas element
     var ctx = document.getElementById('barChart').getContext('2d');
+    console.log("Canvas element: ", ctx); // Debugging: Check if canvas element is correctly retrieved
+
+    // Check if Chart.js is loaded
+    console.log("Chart.js version: ", Chart.version); // Debugging: Check if Chart.js is loaded and its version
 
     // Create the bar chart
-    var barChart = new Chart(ctx, {
-        type: 'bar',
-        data: barChartData,
-        options: barChartOptions
-    });
+    if (ctx) {
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: barChartOptions
+        });
+    } else {
+        console.error("Canvas element not found!"); // Debugging: Log an error if canvas element is not found
+    }
 </script>
 @endpush
