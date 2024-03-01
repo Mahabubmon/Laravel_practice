@@ -40,3 +40,4 @@
     crossorigin="anonymous"></script>
 <!-- ajax file -->
 <script src="{{asset('backend')}}/js/ajaxforcategory.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
