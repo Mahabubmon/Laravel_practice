@@ -4,29 +4,32 @@
 <div class="container">
     <div class="card">
         <h1>Add Brand</h1>
-        <form action="{{route('insertproduct')}}" method="POST">
+        <form action="{{route('storebrand')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="brand_name" class="form-label">Brand Name</label>
                 <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand name">
+                <span class="text-danger">Error</span>
             </div>
             <div class="mb-3">
                 <label for="cat_id" class="form-label">Select Category</label>
                 <select  name="cat_id" id="cat_id" class="form-control">
                     <option value="">-----Select Category-----</option>
-                    <option value="">Active</option>
+                    @foreach($cats as $cat)
+                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="mb-3">
                 <label for="brand_image" class="form-label">Brand Image</label>
                 <div class="input-group">
-                    <input type="file" name="brand_image" id="brand_image" >
+                    <input class="form-control" type="file" name="brand_image" id="brand_image" >
                 </div>
             </div>
             <div class="mb-3">
                 <label for="brand_images" class="form-label">Brand Gallery</label>
                 <div class="input-group">
-                    <input type="file" name="brand_images[]" id="brand_images" multiple>
+                    <input type="file" class="form-control" name="brand_images[]" id="brand_images" multiple>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Add Brand</button>
