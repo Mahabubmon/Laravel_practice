@@ -32,7 +32,7 @@ Route::get('/editproduct/{id}', [Product::class, 'edit'])->name('editproduct');
 Route::post('/updateproduct/{id}', [Product::class, 'update'])->name('updateproduct');
 // for Brand
 Route::get('/addbrand', [BrandController::class, 'index'])->name('addbrand');
-Route::get('/storebrand', [BrandController::class, 'store'])->name('storebrand');
+Route::post('/storebrand', [BrandController::class, 'store'])->name('storebrand');
 
 
 

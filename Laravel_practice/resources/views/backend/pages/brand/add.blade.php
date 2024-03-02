@@ -9,7 +9,9 @@
             <div class="mb-3">
                 <label for="brand_name" class="form-label">Brand Name</label>
                 <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand name">
-                <span class="text-danger">Error</span>
+                @error('brand_name')
+                <span class="text-danger">{{$message}}</span>
+            @enderror
             </div>
             <div class="mb-3">
                 <label for="cat_id" class="form-label">Select Category</label>
