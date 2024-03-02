@@ -8,7 +8,7 @@
             @csrf
             <div class="mb-3">
                 <label for="brand_name" class="form-label">Brand Name</label>
-                <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand name">
+                <input type="text" value="{{old('brand_name')}}" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand name">
                 @error('brand_name')
                 <span class="text-danger">{{$message}}</span>
             @enderror
@@ -21,6 +21,9 @@
                     <option value="{{$cat->id}}">{{$cat->name}}</option>
                     @endforeach
                 </select>
+                 @error('cat_id')
+                <span class="text-danger">{{$message}}</span>
+            @enderror
             </div>
             <div class="mb-3">
                 <label for="brand_image" class="form-label">Brand Image</label>

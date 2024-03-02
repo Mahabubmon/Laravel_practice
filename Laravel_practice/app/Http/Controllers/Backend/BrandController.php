@@ -21,5 +21,11 @@ class BrandController extends Controller
             'brand_name' => 'required',
             'cat_id' => 'required',
         ]);
+
+        if ($request->image) {
+
+        } else {
+
+        }
     }
 }
