@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\Frontend;
 use App\Http\Controllers\Backend\Dashboard;
 use App\Http\Controllers\Backend\Product;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ Route::get('/activeproduct/{id}', [Product::class, 'active'])->name('activeprodu
 Route::get('/inactiveproduct/{id}', [Product::class, 'inactive'])->name('inactiveproduct');
 Route::get('/editproduct/{id}', [Product::class, 'edit'])->name('editproduct');
 Route::post('/updateproduct/{id}', [Product::class, 'update'])->name('updateproduct');
+// for Brand
+Route::get('/addbrand', [BrandController::class, 'index'])->name('addbrand');
+
 
 
 

@@ -33,6 +33,18 @@
                 <!-- Add more dropdown items as needed -->
             </ul>
         </li>
+        <li class="dropdown">
+            <a href="#">
+                <i class="bx bx-box"></i>
+                <span class="links_name">Brand</span>
+                <i class='bx bx-chevron-right'></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{route('addbrand')}}">Add Brand</a></li>
+                <li><a href="{{route('addcategory')}}">Manage Brand</a></li>
+                <!-- Add more dropdown items as needed -->
+            </ul>
+        </li>
 
         <li class="log_out">
             <a href="#">
