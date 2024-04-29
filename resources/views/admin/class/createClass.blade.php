@@ -18,7 +18,13 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Class Name</label>
-                            <input type="text" class="form-control" id="class_name" name="class_name" placeholder="Class Name">
+                            <input type="text" class="form-control @error('class_name') is-invalid @enderror" id="class_name" name="class_name" placeholder="Class Name" value="{{old('class_name')}}">
+                        @error('class_name')
+                        <span class="invalid-feedback" roll="alert">
+                            <strong>{{$message}}</strong>
+                        </span>
+
+                        @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
