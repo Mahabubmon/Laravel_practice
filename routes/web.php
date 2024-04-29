@@ -13,3 +13,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('class',[ClassController::class,'index'])->name('class');
+Route::get('create/class',[ClassController::class,'create'])->name('create.class');
+Route::get('store/class',[ClassController::class,'store'])->name('store.class');

@@ -5,6 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                
+            <h3 class="btn btn-primary"><a style="color:white;"  href="{{route('class')}}">Classes</a></h3>
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
