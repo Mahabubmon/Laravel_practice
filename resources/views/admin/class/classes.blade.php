@@ -25,8 +25,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->class_name }}</td>
                                 <td>
-                                    <button class="btn btn-info">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
+                                    <a href="{{route('class.edit',$row->id)}}" class="btn btn-info">Edit</a>
+                                    <a href="{{route('class.delete',$row->id)}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
