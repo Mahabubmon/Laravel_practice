@@ -39,9 +39,9 @@ class ClassController extends Controller
     }
     public function edit($id){
        $data= DB::table('classes')->where('id',$id)->first();
-        // return view('admin.class.edit',compact('data'));
+        return view('admin.class.edit',compact('data'));
 
-        dd($data);
+        
 
     }
     public function update($id){
