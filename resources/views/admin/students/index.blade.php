@@ -5,27 +5,33 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <div class="card-header">{{ __('Classes')}}
-            <a href="{{route('create.class')}}" class="btn btn-sm btn-primary" style="float:right;">Add Class</a>            
+            <div class="card-header">{{ __(' All Students')}}
+            <a href="{{route('students.create')}}" class="btn btn-sm btn-primary" style="float:right;">Add Student</a>            
             </div>
 
                 <div class="card-body">              
                     <table class="table">
                         <thead style="text-align: center;">
                             <tr>
-                                <th>ID</th>
+                                <th>SL</th>
+                                <th>Roll</th>
+                                <th>Name</th>
+                                <th>Phone</th>
                                 <th>Class Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody style="text-align: center;"> <!-- Added inline style -->
-                            @foreach($class as $key => $row)
+                            @foreach($students as $key => $row)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $row->class_name }}</td>
+                                <td>{{ $row->roll }}</td>
+                                <td>{{ $row->name }}</td>
+                                <td>{{ $row->phone }}</td>
+                                <td>{{ $row->class_id }}</td>
                                 <td>
-                                    <a href="{{route('class.edit',$row->id)}}" class="btn btn-info">Edit</a>
-                                    <a href="{{route('class.delete',$row->id)}}" class="btn btn-danger">Delete</a>
+                                    <a href="" class="btn btn-info">Edit</a>
+                                    <a href="" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
