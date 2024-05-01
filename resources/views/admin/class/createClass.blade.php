@@ -14,7 +14,7 @@
                     <strong class="text-success">{{session()->get('success')}}</strong>
 
                     @endif
-                    <form action="{{route('class.store')}}" method="PUT">
+                    <form action="{{route('class.store')}}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Class Name</label>
@@ -26,6 +26,7 @@
 
                         @enderror
                         </div>
+                        <input type="hidden" name="_method" value="PUT">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
