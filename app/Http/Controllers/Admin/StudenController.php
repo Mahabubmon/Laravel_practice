@@ -65,6 +65,12 @@ class StudenController extends Controller
     public function edit(string $id)
     {
         //
+
+        $classes=DB::table('classes')->get();
+        $students=DB::table('students')->where('id',$id)->first();
+        return view("admin.students.edit", compact("classes,students"));
+
+
     }
 
     /**
@@ -81,5 +87,8 @@ class StudenController extends Controller
     public function destroy(string $id)
     {
         //
+        DB::table('students')->where('id', $id)->delete();
+        return redirect()->back()->with('success','successfully Deleted');
+
     }
 }
