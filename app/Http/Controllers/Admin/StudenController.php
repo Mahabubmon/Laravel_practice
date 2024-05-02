@@ -68,7 +68,7 @@ class StudenController extends Controller
 
         $classes=DB::table('classes')->get();
         $students=DB::table('students')->where('id',$id)->first();
-        return view("admin.students.edit", compact("classes,students"));
+        return view("admin.students.edit", compact("classes","students"));
 
 
     }
@@ -79,6 +79,23 @@ class StudenController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+            'class_id'=> 'required',
+            'name'=> 'required',
+            'phone'=> 'required',
+            'roll'=> 'required',
+        ]);
+
+        dd($request->all());
+        $data=array(
+            'class_id' => $request->class_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'roll' => $request->roll
+        );
+        DB::table('students')->where('id',$id)->update($data);
+        return redirect()->route('students.index')->with('success','successfully Update');
     }
 
     /**

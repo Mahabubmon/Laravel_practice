@@ -14,33 +14,34 @@
                     <strong class="text-success">{{session()->get('success')}}</strong>
 
                     @endif
-                    <form action="{{route('students.store')}}" method="POST">
+                    <form action="{{route('students.update', $students->id)}}" method="post">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3">
                             <label class="form-label">Class Name</label>
                             <select name="class_id" class="form-control" id="">
                             @foreach($classes as $row)
-                            <option value="{{$row->id}}">{{$row->class_name}}</option>
+                            <option value="{{$row->id}}" @if($row->id == $students->class_id) selected @endif >{{$row->class_name}}</option>
                             @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Student Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{$student->name}}">
+                            <input type="text" class="form-control" id="name" name="name" value="{{$students->name}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Student Roll</label>
-                            <input type="text" class="form-control" id="roll" name="roll" value="{{$student->roll}}">
+                            <input type="text" class="form-control" id="roll" name="roll" value="{{$students->roll}}">
 
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Student Email</label>
-                            <input type="text" class="form-control" id="email" name="email" value="{{$student->email}}">
+                            <input type="text" class="form-control" id="email" name="email" value="{{$students->email}}">
 
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Student Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{$student->phone}}">
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{$students->phone}}">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
