@@ -14,8 +14,9 @@ class StudenController extends Controller
     public function index()
     {
         //
-        $students = DB::table('students')->orderBy('roll','ASC')->get();
-        return view("admin.students.index", compact("students"));
+        $class=DB::table("students")->join('classes','students.class_id','classes.id')->orderBy('roll','ASC')->get();
+        // $students = DB::table('students')->orderBy('roll','ASC')->get();
+        return view("admin.students.index", compact("class"));
     }
 
     /**
@@ -86,7 +87,6 @@ class StudenController extends Controller
             'roll'=> 'required',
         ]);
 
-        dd($request->all());
         $data=array(
             'class_id' => $request->class_id,
             'name' => $request->name,

@@ -22,13 +22,13 @@
                             </tr>
                         </thead>
                         <tbody style="text-align: center;"> <!-- Added inline style -->
-                            @foreach($students as $key => $row)
+                            @foreach($class as $key => $row)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->roll }}</td>
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->phone }}</td>
-                                <td>{{ $row->class_id }}</td>
+                                <td>{{ $row->class_name }}</td>
                                 <td>
                                     <a href="{{route('students.edit',$row->id)}}" class="btn btn-info">Edit</a>
 
