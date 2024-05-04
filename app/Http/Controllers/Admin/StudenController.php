@@ -14,7 +14,7 @@ class StudenController extends Controller
     public function index()
     {
         //
-        $class=DB::table("students")->join('classes','students.class_id','classes.id')->orderBy('roll','ASC')->get();
+        $class = DB::table("students")->join('classes', 'students.class_id', 'classes.id')->orderBy('roll', 'ASC')->get();
         // $students = DB::table('students')->orderBy('roll','ASC')->get();
         return view("admin.students.index", compact("class"));
     }
@@ -25,7 +25,7 @@ class StudenController extends Controller
     public function create()
     {
         //
-        $classes=DB::table('classes')->get();
+        $classes = DB::table('classes')->get();
         return view("admin.students.create", compact("classes"));
     }
 
@@ -36,12 +36,12 @@ class StudenController extends Controller
     {
         //
         $request->validate([
-            'class_id'=> 'required',
-            'name'=> 'required',
-            'phone'=> 'required',
-            'roll'=> 'required',
+            'class_id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'roll' => 'required',
         ]);
-        $data=array(
+        $data = array(
             'class_id' => $request->class_id,
             'name' => $request->name,
             'email' => $request->email,
@@ -49,7 +49,8 @@ class StudenController extends Controller
             'roll' => $request->roll
         );
         DB::table('students')->insert($data);
-        return redirect()->back()->with('success','successfully inserted');
+        $notification = array('messege' => 'Student Created Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
     }
 
     /**
@@ -67,9 +68,9 @@ class StudenController extends Controller
     {
         //
 
-        $classes=DB::table('classes')->get();
-        $students=DB::table('students')->where('id',$id)->first();
-        return view("admin.students.edit", compact("classes","students"));
+        $classes = DB::table('classes')->get();
+        $students = DB::table('students')->where('id', $id)->first();
+        return view("admin.students.edit", compact("classes", "students"));
 
 
     }
@@ -81,31 +82,42 @@ class StudenController extends Controller
     {
         //
         $request->validate([
-            'class_id'=> 'required',
-            'name'=> 'required',
-            'phone'=> 'required',
-            'roll'=> 'required',
+            'class_id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'roll' => 'required',
         ]);
 
-        $data=array(
+        $data = array(
             'class_id' => $request->class_id,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'roll' => $request->roll
         );
-        DB::table('students')->where('id',$id)->update($data);
-        return redirect()->route('students.index')->with('success','successfully Update');
+        DB::table('students')->where('id', $id)->update($data);
+        return redirect()->route('students.index')->with('success', 'successfully Update');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-        DB::table('students')->where('id', $id)->delete();
-        return redirect()->back()->with('success','successfully Deleted');
+    // public function destroy(string $id)
+    // {
+    //     //
+    //     dd($id);
+    //     // DB::table('students')->where('id', $id)->delete();
+    //     // return redirect()->back()->with('success', 'successfully Deleted');
 
+    //     // $notification = array('messege' => 'Classs Deleted Successfully', 'alert-type' => 'success');
+    //     // return redirect()->back()->with($notification);
+
+    // }
+    public function destroy($id)
+    {
+        // Remove the dd($id) statement
+
+        DB::table('students')->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Student deleted successfully');
     }
 }

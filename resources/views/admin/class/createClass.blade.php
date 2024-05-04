@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-2">
     <div class="row justify-content-center">
         <div class="col-md-8">
 
             <div class="card">
                 <div class="card-header">{{ __('Add New Class')}}
-                <a  href="{{route('class')}}" class="btn btn-sm btn-primary" style="float:right;">All Class</a>
                 </div>
                 <div class="card-body">
                     @if(session()->has('success'))
