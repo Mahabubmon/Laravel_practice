@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Class Tables</li>
+              <li class="breadcrumb-item active">Teacher Tables</li>
             </ol>
           </div>
         </div>
@@ -26,7 +26,7 @@
                 <div class="col-12">
                 <div class="card">
               <div class="card-header">
-                <h3 class="card-title">All Classes</h3>
+                <h3 class="card-title">All Teachers</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -35,17 +35,19 @@
                     <tr>
                           <th>ID</th>
                           <th>Class Name</th>
+                          <th>Teacher Name</th>
                           <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($class as $key => $row)
+                  @foreach($data as $key => $row)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->class_name }}</td>
+                                <td>{{ $row->teacher_name }}</td>
                                 <td>
-                                    <a href="{{route('class.edit', $row->id)}}" class="btn btn-info">Edit</a>
-                                    <a href="{{route('class.delete', $row->id)}}" class="btn btn-danger ">Delete</a>
+                                    <a href="{{route('teachers.edit', $row->id)}}" class="btn btn-info">Edit</a>
+                                    <a href="{{route('teachers.delete', $row->id)}}" class="btn btn-danger ">Delete</a>
                                 </td>
                             </tr>
                             @endforeach

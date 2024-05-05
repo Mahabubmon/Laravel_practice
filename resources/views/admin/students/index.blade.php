@@ -35,7 +35,7 @@
                                     <form action="{{route('students.destroy', $row->id)}}" method="POST">
                                     @csrf
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger ">Delete</button>
                                     </form>
                                 </td>
                             </tr>

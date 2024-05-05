@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use DB;
 
@@ -49,8 +50,8 @@ class StudenController extends Controller
             'roll' => $request->roll
         );
         DB::table('students')->insert($data);
-        $notification = array('messege' => 'Student Created Successfully', 'alert-type' => 'success');
-        return redirect()->back()->with($notification);
+        // $notification = array('messege' => 'Student Created Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with('success', 'Data inserted successfully');
     }
 
     /**
@@ -102,22 +103,20 @@ class StudenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy(string $id)
-    // {
-    //     //
-    //     dd($id);
-    //     // DB::table('students')->where('id', $id)->delete();
-    //     // return redirect()->back()->with('success', 'successfully Deleted');
-
-    //     // $notification = array('messege' => 'Classs Deleted Successfully', 'alert-type' => 'success');
-    //     // return redirect()->back()->with($notification);
-
-    // }
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        // Remove the dd($id) statement
+        //
+        // $query = DB::table('students')->where('id', $id)->delete();
 
-        DB::table('students')->where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Student deleted successfully');
+        // echo $query;
+        // dd($query);
+
+        // return redirect()->route('students.index')->with('success', 'successfully Deleted');
+
+        Student::destroy($id);
+        return redirect()->back()->with('success', 'Data Deleted');
+
     }
+
+
 }

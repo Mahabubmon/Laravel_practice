@@ -32,9 +32,9 @@ class ClassController extends Controller
             'class_name' => $request->class_name,
         );
         DB::table('classes')->insert($data);
-        // return redirect()->back()->with('success','successfully inserted');
-        $notification = array('messege' => 'Classs Create Successfully', 'alert-type' => 'success');
-        return redirect()->back()->with($notification);
+        return redirect()->back()->with('success', 'successfully inserted');
+        // $notification = array('messege' => 'Classs Create Successfully', 'alert-type' => 'success');
+        // return redirect()->back()->with($notification);
 
 
     }

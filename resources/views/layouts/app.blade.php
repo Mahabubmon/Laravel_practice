@@ -161,24 +161,33 @@ $(document).on("click", ".delete", function(e){
 
 </script>
 <script>
-  @if(Session::has('message'))
-    var type = "{{ Session::get('alert-type', 'info') }}";
-    switch (type) {
-        case 'info':
-            toastr.info("{{ Session::get('message') }}");
-            break;
-        case 'success':
-            toastr.success("{{ Session::get('message') }}");
-            break;
-        case 'warning':
-            toastr.warning("{{ Session::get('message') }}");
-            break;
-        case 'error':
-            toastr.error("{{ Session::get('message') }}");
-            break;
-    }
-  @endif
+ @if(Session::has('message'))
+    @php
+        $type = Session::get('alert-type', 'info');
+        $message = Session::get('message');
+    @endphp
 
+    @switch($type)
+        @case('info')
+            toastr.info("{{ $message }}");
+            @break
+
+        @case('success')
+            toastr.success("{{ $message }}");
+            @break
+
+        @case('warning')
+            toastr.warning("{{ $message }}");
+            @break
+
+        @case('error')
+            toastr.error("{{ $message }}");
+            @break
+
+        @default
+            toastr.info("{{ $message }}");
+    @endswitch
+@endif
 </script>
 </body>
 </html>
