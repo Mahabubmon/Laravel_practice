@@ -59,15 +59,7 @@ class TeacherController extends Controller
 
     public function update(Request $request, string $id)
     {
-        //
-        // $request->validate([
-        //     'class_id' => 'required',
-        //     'teacher_name' => 'required',
-        // ]);
-        // $data = array(
-        //     'class_id' => $request->class_id,
-        //     'teacher_name' => $request->teacher_name,
-        // );
+
 
         $teacher = Teacher::find($id);
         $teacher->class_id = $request->class_id;
